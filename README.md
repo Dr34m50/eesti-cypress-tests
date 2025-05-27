@@ -1,47 +1,51 @@
-**# Eesti.ee Cypress UI Testid
+# Eesti.ee Cypress UI Testid
 
-See projekt sisaldab automatiseeritud UI teste Eesti riigiportaali [eesti.ee](https://www.eesti.ee) jaoks, kasutades tööriista [Cypress](https://www.cypress.io/).
+## 📌 Kirjeldus
 
-## 📦 Projekti ülesehitus
+See projekt sisaldab automatiseeritud UI teste [eesti.ee](https://www.eesti.ee) veebilehe jaoks, kasutades [Cypress](https://www.cypress.io) tööriista. Testide eesmärk on kontrollida veebilehe põhilist funktsionaalsust, nagu otsing, navigeerimine, kontaktivorm ja populaarsed teenused.
 
-- `01-homepage.cy.js` – testid avalehe laadimise ja otsinguvälja kohta
-- `02-navigation.cy.js` – testid põhinavigatsiooni jaoks
-- `03-contact.cy.js` – testid kontaktivormi olemasolu ja funktsionaalsuse kohta
-- `04-popular-services.cy.js` – testid populaarsete teenuste sektsiooni kohta
+Kodutöö on tehtud individuaalselt vastavalt õppeülesandele loengus _E2E testimine_.
 
-## 🚀 Kuidas käivitada testid
+---
 
-1. Lae alla või klooni see repositoorium:
-   ```bash
-   git clone https://github.com/SINU_GITHUB/eesti-cypress-tests.git
-   cd eesti-cypress-tests
-   ```
+## ✅ Tehtud testid
 
-2. Paigalda sõltuvused:
+1. **`01-homepage.cy.js` – Avalehe otsing**
+   - Kontrollib, et otsingukast on nähtav ja sinna saab teksti sisestada
+   - Kontrollib, et peale teksti sisestamist kuvatakse tulemused
+
+2. **`02-navigation.cy.js` – Lehe navigeatsioon**
+   - Kontrollib, et saab liikuda peamenüü kaudu alalehtedele:
+     - Kodanikule
+     - Ettevõtjale
+     - Ametnikule
+
+3. **`03-contact.cy.js` – Kontaktivorm**
+   - Avab "Kirjuta meile" vormi
+   - Kontrollib, et vormi sisestusväljad on olemas (nimi, e-post, sõnum)
+
+4. **`04-popular-services.cy.js` – Populaarsed teenused**
+   - Kontrollib, et sektsioon "Populaarsemad teenused" on nähtav
+   - Kontrollib, et populaarsete teenuste linke on mitu ja nad töötavad
+
+---
+
+## 🚀 Paigaldamine ja käivitamine
+
+1. Paigalda sõltuvused:
    ```bash
    npm install
    ```
 
-3. Ava Cypress Test Runner:
+2. Käivita Cypress:
    ```bash
    npx cypress open
    ```
 
-4. Vali soovitud testifail ja käivita see Cypressi aknas.
+3. Vali soovitud testifail Cypressi aknas ja alusta testimist.
 
-## ✅ Kaetud stsenaariumid
-
-- Avalehe korrektne laadimine ja otsinguväli
-- Menüüpõhine navigeerimine (Kodanikule, Ettevõtjale, Ametnikule)
-- Kontaktivormi väljade olemasolu ja kehtetu e-posti kontroll
-- Populaarsed teenused – nähtavus ja navigeerimine
-- (soovi korral) Otsing: "Eesti hümn", tühi päring, veateade
-
-## 📝 Märkmed
-
-- Testide baas-URL on määratud `cypress.config.js` failis (`https://www.eesti.ee`)
-- Testid on kirjutatud kasutades `Cypress 14.4.0`
+---
 
 ## 📄 Autor
 
-Kristofer Beljakov**
+Kristofer Beljakov
